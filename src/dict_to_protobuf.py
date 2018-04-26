@@ -31,4 +31,7 @@ def parse_dict(values,message):
             
 
 def dict_to_protobuf(value,message):
-    parse_dict(value,message)
+    if isinstance(value, dict):
+        parse_dict(value,message)
+    else: #api compatible with protobuf-to-dict
+        parse_dict(message, value)
