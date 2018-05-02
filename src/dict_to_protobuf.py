@@ -1,5 +1,4 @@
 #coding=utf-8
-from types import StringTypes
 import logging
 
 l = logging.getLogger('dict_to_protbuf')
