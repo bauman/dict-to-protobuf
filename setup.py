@@ -1,5 +1,5 @@
 from setuptools import setup
-VERSION = "0.0.3.2"
+VERSION = "0.0.3.3"
 setup(
     name='dict-to-protobuf',
     description='A teeny Python library for creating protobuf dicts from '
@@ -15,7 +15,7 @@ setup(
     download_url='https://github.com/bauman/dict-to-protobuf/archive/%s.tar.gz' % (VERSION),
     license='Public Domain',
     keywords=['protobuf', 'dict'],
-    install_requires=['protobuf>=2.3.0'],
+    install_requires=['protobuf>=2.3.0'i, "six"],
     package_dir={'':'src'},
     py_modules=['dict_to_protobuf'],
     classifiers=[

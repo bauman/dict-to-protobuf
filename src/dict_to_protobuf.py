@@ -1,5 +1,6 @@
 #coding=utf-8
 import logging
+import six
 
 l = logging.getLogger('dict_to_protbuf')
 
@@ -15,7 +16,11 @@ def parse_list(values,message):
 
 
 def parse_dict(values,message):
-    for k,v in values.iteritems():
+    if six.PY2:
+        iterator = values.iteritems()
+    elif six.PY3:
+        iterator = values.items()
+    for k,v in iterator:
         if isinstance(v,dict):#value needs to be further parsed
             parse_dict(v,getattr(message,k))
         elif isinstance(v,list):
