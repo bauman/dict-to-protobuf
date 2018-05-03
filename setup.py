@@ -15,7 +15,7 @@ setup(
     download_url='https://github.com/bauman/dict-to-protobuf/archive/%s.tar.gz' % (VERSION),
     license='Public Domain',
     keywords=['protobuf', 'dict'],
-    install_requires=['protobuf>=2.3.0'i, "six"],
+    install_requires=['protobuf>=2.3.0', "six"],
     package_dir={'':'src'},
     py_modules=['dict_to_protobuf'],
     classifiers=[
