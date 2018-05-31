@@ -1,5 +1,5 @@
 from setuptools import setup
-VERSION = "0.0.3.6"
+VERSION = "0.0.3.7"
 setup(
     name='dict-to-protobuf',
     description='A teeny Python library for creating protobuf dicts from '
