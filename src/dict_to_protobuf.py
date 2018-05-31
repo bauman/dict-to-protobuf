@@ -28,18 +28,16 @@ def parse_dict(values,message):
     elif six.PY3:
         iterator = values.items()
     for k,v in iterator:
-        if isinstance(v,dict):#value needs to be further parsed
-            parse_dict(v,getattr(message,k))
-        elif isinstance(v,list):
-            parse_list(v,getattr(message,k))
-        else:#value can be set
-            try:
+        try:
+            if isinstance(v, dict):#value needs to be further parsed
+                parse_dict(v,getattr(message,k))
+            elif isinstance(v, list):
+                parse_list(v,getattr(message,k))
+            else:#value can be set
                 setattr(message, k, v)
-            except AttributeError:
-                logging.basicConfig()
-                l.warning('try to access invalid attributes %r.%r = %r',message,k,v)
-                
-            
+        except AttributeError:
+            logging.basicConfig()
+            l.warning('try to access invalid attributes %r.%r = %r', message, k, v)
 
 def dict_to_protobuf(value,message):
     if isinstance(value, dict):
