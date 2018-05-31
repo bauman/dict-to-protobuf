@@ -14,7 +14,7 @@ __all__ = ['dict_to_protobuf', "protobuf_to_dict"]
 ##---------------------------------------------------------------------
 def parse_list(values,message):
     '''parse list to protobuf message'''
-    if isinstance(values[0],dict):#value needs to be further parsed
+    if values and isinstance(values[0], dict):#value needs to be further parsed
         for v in values:
             cmd = message.add()
             parse_dict(v,cmd)
