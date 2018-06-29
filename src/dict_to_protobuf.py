@@ -90,7 +90,7 @@ else:
         FieldDescriptor.TYPE_SFIXED64: int,
         FieldDescriptor.TYPE_BOOL: bool,
         FieldDescriptor.TYPE_STRING: str,
-        FieldDescriptor.TYPE_BYTES: lambda b: b.encode("base64"),
+        FieldDescriptor.TYPE_BYTES: bytes,
         FieldDescriptor.TYPE_ENUM: int,
     }
 
