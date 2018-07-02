@@ -42,8 +42,14 @@ def parse_dict(values,message):
 def dict_to_protobuf(value,message):
     if isinstance(value, dict):
         parse_dict(value,message)
-    else: #api compatible with protobuf-to-dict
+    elif hasattr(value, "DESCRIPTOR"):
         parse_dict(message, value)
+    elif isinstance(value, list):
+        #assume the first key is a key to a list obj
+        guessed_key = message.DESCRIPTOR.fields_by_name.items()[0][0]  #may raise IndexError
+        parse_dict({guessed_key:value}, message)
+
+
 
 
 

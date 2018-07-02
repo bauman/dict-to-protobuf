@@ -18,7 +18,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message.proto',
   package='',
-  serialized_pb=_b('\n\rmessage.proto\"e\n\x07\x43ityAoi\x12&\n\x06player\x18\x01 \x03(\x0b\x32\x16.CityAoi.PlayerCityAoi\x1a\x32\n\rPlayerCityAoi\x12\x0f\n\x07role_id\x18\x01 \x01(\x05\x12\x10\n\x08target_x\x18\x02 \x01(\x05')
+  serialized_pb=_b('\n\rmessage.proto\"e\n\x07\x43ityAoi\x12&\n\x06player\x18\x01 \x03(\x0b\x32\x16.CityAoi.PlayerCityAoi\x1a\x32\n\rPlayerCityAoi\x12\x0f\n\x07role_id\x18\x01 \x01(\x05\x12\x10\n\x08target_x\x18\x02 \x01(\x05\"!\n\x08\x43ityAois\x12\x15\n\x03\x43\x41S\x18\x01 \x03(\x0b\x32\x08.CityAoi')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -90,9 +90,41 @@ _CITYAOI = _descriptor.Descriptor(
   serialized_end=118,
 )
 
+
+_CITYAOIS = _descriptor.Descriptor(
+  name='CityAois',
+  full_name='CityAois',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CAS', full_name='CityAois.CAS', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=120,
+  serialized_end=153,
+)
+
 _CITYAOI_PLAYERCITYAOI.containing_type = _CITYAOI
 _CITYAOI.fields_by_name['player'].message_type = _CITYAOI_PLAYERCITYAOI
+_CITYAOIS.fields_by_name['CAS'].message_type = _CITYAOI
 DESCRIPTOR.message_types_by_name['CityAoi'] = _CITYAOI
+DESCRIPTOR.message_types_by_name['CityAois'] = _CITYAOIS
 
 CityAoi = _reflection.GeneratedProtocolMessageType('CityAoi', (_message.Message,), dict(
 
@@ -108,6 +140,13 @@ CityAoi = _reflection.GeneratedProtocolMessageType('CityAoi', (_message.Message,
   ))
 _sym_db.RegisterMessage(CityAoi)
 _sym_db.RegisterMessage(CityAoi.PlayerCityAoi)
+
+CityAois = _reflection.GeneratedProtocolMessageType('CityAois', (_message.Message,), dict(
+  DESCRIPTOR = _CITYAOIS,
+  __module__ = 'message_pb2'
+  # @@protoc_insertion_point(class_scope:CityAois)
+  ))
+_sym_db.RegisterMessage(CityAois)
 
 
 # @@protoc_insertion_point(module_scope)

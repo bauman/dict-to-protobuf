@@ -5,3 +5,6 @@ message CityAoi {
 	}
 	repeated PlayerCityAoi player = 1;
 }
+message CityAois {
+	repeated CityAoi CAS = 1;
+}
